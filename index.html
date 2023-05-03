@@ -1,6 +1,7 @@
-
-<!-- saved from url=(0044)https://hlsjs.video-dev.org/demo/basic-usage -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>BrowseNX IPTV Player</title>
   </head>
 
@@ -24,7 +25,7 @@
         var hls = new Hls({
           debug: true,
         });
-        hls.loadSource(stream);
+        hls.loadSource('https://cors-anywhere.herokuapp.com/' + stream);
         hls.attachMedia(video);
         hls.on(Hls.Events.MEDIA_ATTACHED, function () {
           video.muted = true;
@@ -35,7 +36,7 @@
       // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element through the `src` property.
       // This is using the built-in support of the plain video element, without using hls.js.
       else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = stream;
+        video.src = 'https://cors-anywhere.herokuapp.com/' + stream;
         video.addEventListener('canplay', function () {
           video.play();
         });
