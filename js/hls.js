@@ -513,9 +513,15 @@
   // }
 
   function consolePrintFn(type) {
-    var func = self.console[type];
-    if (func) {
-      return func.bind(self.console, "[" + type + "] >");
+    //var func = self.console[type];
+    //if (func) {
+    //  return func.bind(self.console, "[" + type + "] >");
+    //}
+    return function(...args){
+      document.getElementById('error').innerText += ('\n' + type + ' -> ')
+      for (var i = 0; i < args.length; i++) {
+        document.getElementById('error').innerText += args[i];
+      }
     }
     return noop;
   }

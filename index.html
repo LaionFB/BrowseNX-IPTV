@@ -11,8 +11,11 @@
       <h1 id="title"></h1>
       <video height="600" id="video" controls=""></video>
     </center>
+    <h6>Log:</h6>
+    <span id="error"></span>
 
     <script>
+    try{
       var queryString = window.location.search;
       var urlParams = new URLSearchParams(queryString);
       var stream = urlParams.get('stream');
@@ -40,6 +43,9 @@
           video.play();
         });
       }
+    } catch(e){
+      document.getElementById('error').innerText += e.stack + '\n\n';
+    }
     </script>
 
 </body></html>
