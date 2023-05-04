@@ -12,7 +12,7 @@
       <video height="600" id="video" controls=""></video>
     </center>
     <h6>Log:</h6>
-    <span id="error"></span>
+    <span id="error">a</span>
 
     <script>
     try{
@@ -45,6 +45,7 @@
       }
     } catch(e){
       document.getElementById('error').innerText += e.stack + '\n\n';
+      document.getElementById('error').innerText += 'b'
     }
     </script>
 
