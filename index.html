@@ -16,6 +16,7 @@
 
     <script>
     try{
+      document.getElementById('error').innerText += 'b'
       var queryString = window.location.search;
       var urlParams = new URLSearchParams(queryString);
       var stream = urlParams.get('stream');
@@ -45,7 +46,6 @@
       }
     } catch(e){
       document.getElementById('error').innerText += e.stack + '\n\n';
-      document.getElementById('error').innerText += 'b'
     }
     </script>
 
