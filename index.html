@@ -27,7 +27,8 @@
       var title = document.getElementById('title');
       title.innerText = stream || 'No Content';
       var video = document.getElementById('video');
-      alert(Hls.isSupported())
+      alert('Hls is Supported ' + Hls.isSupported())
+      alert('can play vnd.apple.mpegurl ' + !!video.canPlayType('application/vnd.apple.mpegurl'))
       if (Hls.isSupported()) {
         var hls = new Hls({
           debug: true,

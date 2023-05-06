@@ -2756,6 +2756,8 @@
     var _proto = LevelKey.prototype;
     _proto.isSupported = function isSupported() {
       // If it's Segment encryption or No encryption, just select that key system
+      //alert(this.method)
+      //alert(this.keyFormat)
       if (this.method) {
         if (this.method === 'AES-128' || this.method === 'NONE') {
           return true;
@@ -9833,11 +9835,15 @@
    * @ignore
    */
   function isSupported() {
+    alert('isSupported')
     var mediaSource = getMediaSource();
+    alert('mediaSource ' + !!mediaSource)
     if (!mediaSource) {
       return false;
     }
     var sourceBuffer = getSourceBuffer();
+    alert('typeof mediasource function ' + !!typeof mediaSource.isTypeSupported === 'function');
+    alert('mediaSource supports codecs ' + !!mediaSource.isTypeSupported('video/mp4; codecs="avc1.42E01E,mp4a.40.2"'));
     var isTypeSupported = mediaSource && typeof mediaSource.isTypeSupported === 'function' && mediaSource.isTypeSupported('video/mp4; codecs="avc1.42E01E,mp4a.40.2"');
 
     // if SourceBuffer is exposed ensure its API is valid
