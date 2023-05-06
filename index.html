@@ -2,6 +2,9 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>BrowseNX IPTV Player</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   </head>
 
   <body>
@@ -24,6 +27,7 @@
       var title = document.getElementById('title');
       title.innerText = stream || 'No Content';
       var video = document.getElementById('video');
+      alert(Hls.isSupported())
       if (Hls.isSupported()) {
         var hls = new Hls({
           debug: true,
