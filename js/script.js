@@ -3,7 +3,7 @@ var urlParams = new URLSearchParams(queryString);
 var server = urlParams.get('server');
 var username = urlParams.get('username');
 var password = urlParams.get('listUrl');
-var listUrl = `https://${server}/get.php?username=${username}&password=${password}&type=m3u_plus&output=m3u8`
+var listUrl = `http://${server}/get.php?username=${username}&password=${password}&type=m3u_plus&output=m3u8`
 var title = document.getElementById('title');
 var content = document.getElementById('content');
 var m3u = '';
