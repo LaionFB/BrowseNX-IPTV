@@ -5,27 +5,36 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="css/shin-go-font.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
     <script src="./js/hls.js"></script>
 
+    <!--
     <center>
       <h1 id="title"></h1>
       <video height="600" id="video" controls=""></video>
     </center>
     <h6>Log:</h6>
     <span id="error"></span>
-
+-->
+  <div id="header">
+    <span id="title">Channels</span>
+  </div>
+  <div id="content">
+    
+  </div>
     <script>
     try{
-      var queryString = window.location.search;
-      var urlParams = new URLSearchParams(queryString);
-      var stream = urlParams.get('stream');
-
-      var title = document.getElementById('title');
-      title.innerText = stream || 'No Content';
-      var video = document.getElementById('video');
+      //bbb//var queryString = window.location.search;
+      //bbb//var urlParams = new URLSearchParams(queryString);
+      //bbb//var stream = urlParams.get('stream');
+//bbb//
+      //bbb//var title = document.getElementById('title');
+      //bbb//title.innerText = stream || 'No Content';
+      //bbb//var video = document.getElementById('video');
       //alert('Hls is Supported ' + Hls.isSupported())
       //alert('can play vnd.apple.mpegurl ' + !!video.canPlayType('application/vnd.apple.mpegurl'))
       //if (Hls.isSupported()) {
@@ -43,21 +52,22 @@
       //// When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element through the `src` property.
       //// This is using the built-in support of the plain video element, without using hls.js.
       //else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = stream;
-        video.onerror = function(...args){
-          alert('onerror')
-          console.error(...args)
-          for(var i = 0; i < args.length; i++){
-            alert(JSON.stringify(args[i]))
-          }
-        };
-        video.addEventListener('canplay', function () {
-          video.play();
-        });
+      //aa//  video.src = stream;
+      //aa//  video.onerror = function(...args){
+      //aa//    alert('onerror')
+      //aa//    console.error(...args)
+      //aa//    for(var i = 0; i < args.length; i++){
+      //aa//      alert(JSON.stringify(args[i]))
+      //aa//    }
+      //aa//  };
+      //aa//  video.addEventListener('canplay', function () {
+      //aa//    video.play();
+      //aa//  });
       //}
     } catch(e){
       document.getElementById('error').innerText += e.stack + '\n\n';
     }
     </script>
+    <script src="js/script.js"></script>
 
 </body></html>

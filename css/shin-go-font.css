@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Shin Go';
+    src: url("G-OTF_Shin_Go_Pro_R.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Shin Go';
+    font-weight: lighter;
+    src: url("G-OTF_Shin_Go_Pro_L.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Shin Go';
+    font-weight: bold;
+    src: url("G-OTF_Shin_Go_Pro_B.otf") format("opentype");
+}
