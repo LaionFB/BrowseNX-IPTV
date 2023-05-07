@@ -2,7 +2,7 @@ var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 var server = urlParams.get('server');
 var username = urlParams.get('username');
-var password = urlParams.get('listUrl');
+var password = urlParams.get('password');
 var listUrl = `http://${server}/get.php?username=${username}&password=${password}&type=m3u_plus&output=m3u8`
 var title = document.getElementById('title');
 var content = document.getElementById('content');
@@ -43,7 +43,7 @@ function parseRawM3u(m3u){
             }
             i++;
             pos = result['index'] + result[0].length + 1;
-            if(/FHD$/.test(result[1])){
+            if(/ HD$/.test(result[1])){
                 channels.push({
                     name: result[1],
                     img: result[2],
